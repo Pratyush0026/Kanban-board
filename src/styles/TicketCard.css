@@ -1,0 +1,84 @@
+
+.ticket-card {
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .ticket-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .ticket-id {
+    font-size: 12px;
+    color: #666;
+    font-weight: bold;
+  }
+  
+  .ticket-user-image {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+  
+  .ticket-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 4px 0;
+  }
+  
+  .ticket-priority {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .priority-icon {
+    font-size: 18px;
+  }
+  
+  .priority-label {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .ticket-tag {
+    background-color: #f2f4f5;
+    color: #666;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    width: fit-content;
+  }
+  
+  /* Icon Colors */
+  .no-priority-icon {
+    color: #b0b0b0; /* Gray for no priority */
+  }
+  
+  .low-priority-icon {
+    color: #4caf50; /* Green for low priority */
+  }
+  
+  .medium-priority-icon {
+    color: #ff9800; /* Orange for medium priority */
+  }
+  
+  .high-priority-icon {
+    color: #f44336; /* Red for high priority */
+  }
+  
+  .urgent-priority-icon {
+    color: #d32f2f; /* Darker red for urgent priority */
+  }
+  
