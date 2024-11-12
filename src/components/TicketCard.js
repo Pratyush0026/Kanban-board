@@ -1,10 +1,10 @@
 import React from 'react';
-import { FaExclamationCircle } from 'react-icons/fa';
-import { MdPriorityHigh } from 'react-icons/md';
-import { AiOutlineMedium } from 'react-icons/ai';
-import { FiArrowDown } from 'react-icons/fi';
-import { BsDashCircle } from 'react-icons/bs';
 import '../styles/TicketCard.css';
+
+import lowPriorityIcon from '../assets/Img - Low Priority.svg';
+import mediumPriorityIcon from '../assets/Img - Medium Priority.svg';
+import highPriorityIcon from '../assets/Img - High Priority.svg';
+import noPriorityIcon from '../assets/No-priority.svg';
 
 const defaultUserImages = [
   'https://randomuser.me/api/portraits/men/32.jpg',
@@ -15,13 +15,12 @@ const defaultUserImages = [
 ];
 
 function TicketCard({ ticket }) {
-  // Icons representing different ticket priority levels
   const priorityIcons = [
-    <BsDashCircle className="no-priority-icon" />,       // No priority
-    <FiArrowDown className="low-priority-icon" />,        // Low priority
-    <AiOutlineMedium className="medium-priority-icon" />, // Medium priority
-    <MdPriorityHigh className="high-priority-icon" />,    // High priority
-    <FaExclamationCircle className="urgent-priority-icon" />  // Urgent priority
+    noPriorityIcon,       // No priority
+    lowPriorityIcon,        // Low priority
+    mediumPriorityIcon, // Medium priority
+    highPriorityIcon,    // High priority
+    highPriorityIcon     // Urgent priority (same as High for now)
   ];
 
   // Randomly select a user image for the ticket
@@ -37,7 +36,7 @@ function TicketCard({ ticket }) {
       <h3 className="ticket-title">{ticket.title}</h3>
       <div className="ticket-priority">
         {/* Display the priority icon and label */}
-        <span className="priority-icon">{priorityIcons[ticket.priority]}</span>
+        <img src={priorityIcons[ticket.priority]} alt={`${ticket.priority} Priority`} className="priority-icon" />
         <span className="priority-label">
           {["No Priority", "Low", "Medium", "High", "Urgent"][ticket.priority]}
         </span>

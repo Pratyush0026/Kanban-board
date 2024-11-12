@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import KanbanBoard from './components/KanbanBoard';
 
 function App() {
-  const [data, setData] = useState({ tickets: [], users: [] }); // Initialize state with empty tickets and users arrays
+  const [data, setData] = useState({ tickets: [], users: [] });
 
   useEffect(() => {
     // Fetch data from API on component mount
@@ -23,7 +23,7 @@ function App() {
       }
     };
 
-    fetchData(); // Call the async function to fetch data
+    fetchData(); 
   }, []);
 
   return (

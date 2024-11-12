@@ -61,24 +61,4 @@
     width: fit-content;
   }
   
-  /* Icon Colors */
-  .no-priority-icon {
-    color: #b0b0b0; /* Gray for no priority */
-  }
-  
-  .low-priority-icon {
-    color: #4caf50; /* Green for low priority */
-  }
-  
-  .medium-priority-icon {
-    color: #ff9800; /* Orange for medium priority */
-  }
-  
-  .high-priority-icon {
-    color: #f44336; /* Red for high priority */
-  }
-  
-  .urgent-priority-icon {
-    color: #d32f2f; /* Darker red for urgent priority */
-  }
   

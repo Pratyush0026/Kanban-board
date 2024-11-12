@@ -1,43 +1,41 @@
 import React from 'react';
 import TicketCard from './TicketCard';
-import { FaExclamationCircle } from 'react-icons/fa';
-import { MdPriorityHigh } from 'react-icons/md';
-import { AiOutlineMedium } from 'react-icons/ai';
-import { FiArrowDown, FiCircle, FiPlayCircle, FiArchive } from 'react-icons/fi';
-import { BsDashCircle, BsCheckCircle } from 'react-icons/bs';
-import { RxCrossCircled } from 'react-icons/rx';
 import '../styles/KanbanColumn.css';
 
-const defaultUserImages = [
-  'https://randomuser.me/api/portraits/men/32.jpg',
-  'https://randomuser.me/api/portraits/women/44.jpg',
-  'https://randomuser.me/api/portraits/men/53.jpg',
-  'https://randomuser.me/api/portraits/women/68.jpg',
-  'https://randomuser.me/api/portraits/men/85.jpg'
-];
+import addIcon from '../assets/add.svg';
+import backlogIcon from '../assets/Backlog.svg';
+import canceledIcon from '../assets/Cancelled.svg';
+import doneIcon from '../assets/Done.svg';
+import inProgressIcon from '../assets/in-progress.svg';
+import lowPriorityIcon from '../assets/Img - Low Priority.svg';
+import mediumPriorityIcon from '../assets/Img - Medium Priority.svg';
+import highPriorityIcon from '../assets/Img - High Priority.svg';
+import noPriorityIcon from '../assets/No-priority.svg';
+import UrgentIcon from '../assets/SVG - Urgent Priority colour.svg';
+import todoIcon from '../assets/To-do.svg';
+import threeDotMenuIcon from '../assets/3 dot menu.svg';
 
 function KanbanColumn({ title, tickets, isUserColumn }) {
   // Select a random profile image for user columns only
   const randomUserImage = isUserColumn
-    ? defaultUserImages[Math.floor(Math.random() * defaultUserImages.length)]
+    ? `https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 100)}.jpg`
     : null;
 
-  // Define priority icons for quick access
   const priorityIcons = {
-    "Urgent": <FaExclamationCircle className="urgent-priority-icon" />,
-    "High": <MdPriorityHigh className="high-priority-icon" />,
-    "Medium": <AiOutlineMedium className="medium-priority-icon" />,
-    "Low": <FiArrowDown className="low-priority-icon" />,
-    "No Priority": <BsDashCircle className="no-priority-icon" />
+    "Urgent": UrgentIcon, 
+    "High": highPriorityIcon,
+    "Medium": mediumPriorityIcon,
+    "Low": lowPriorityIcon,
+    "No Priority": noPriorityIcon
   };
 
-  // Define status icons for quick access
+  // Status icon mapping
   const statusIcons = {
-    "Todo": <FiCircle className="todo-status-icon" />,
-    "In Progress": <FiPlayCircle className="in-progress-status-icon" />,
-    "Done": <BsCheckCircle className="done-status-icon" />,
-    "Canceled": <RxCrossCircled className="canceled-status-icon" />,
-    "Backlog": <FiArchive className="backlog-status-icon" />
+    "Todo": todoIcon,
+    "In Progress": inProgressIcon,
+    "Done": doneIcon,
+    "Canceled": canceledIcon,
+    "Backlog": backlogIcon
   };
 
   return (
@@ -50,7 +48,9 @@ function KanbanColumn({ title, tickets, isUserColumn }) {
           )}
           
           {/* Display appropriate icon based on the title if it matches a status or priority */}
-          {statusIcons[title] || priorityIcons[title] || null}
+          {statusIcons[title] && <img src={statusIcons[title]} alt={`${title} Icon`} className="status-icon" />}
+          {priorityIcons[title] && <img src={priorityIcons[title]} alt={`${title} Priority Icon`} className="priority-icon" />}
+          
           {title}
           {/* Display the number of tickets in this column */}
           {isUserColumn && tickets.length > 0 && (
@@ -60,8 +60,12 @@ function KanbanColumn({ title, tickets, isUserColumn }) {
 
         {/* Buttons for "Add" and "More Options" */}
         <div className="column-buttons">
-          <button className="add-button">+</button>
-          <button className="more-button">...</button>
+          <button className="add-button">
+            <img src={addIcon} alt="Add Button" className="button-icon" />
+          </button>
+          <button className="more-button">
+          <img src={threeDotMenuIcon} alt="More Options" className="button-icon" />
+          </button>
         </div>
       </div>
 
