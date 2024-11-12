@@ -1,3 +1,4 @@
+// src/components/KanbanColumn.js
 import React from 'react';
 import TicketCard from './TicketCard';
 import { FaExclamationCircle } from 'react-icons/fa';
@@ -43,16 +44,24 @@ function KanbanColumn({ title, tickets, isUserColumn }) {
 
   return (
     <div className="kanban-column">
-      <h2 className="column-title">
-        {/* Show user image if this is a user-specific column */}
-        {isUserColumn && randomUserImage && (
-          <img src={randomUserImage} alt={`${title} Profile`} className="user-profile-icon" />
-        )}
-        
-        {/* Display appropriate icon based on the title if it matches a status or priority */}
-        {statusIcons[title] || priorityIcons[title] || null}
-        {title}
-      </h2>
+      <div className="column-header">
+        <h2 className="column-title">
+          {/* Show user image if this is a user-specific column */}
+          {isUserColumn && randomUserImage && (
+            <img src={randomUserImage} alt={`${title} Profile`} className="user-profile-icon" />
+          )}
+          
+          {/* Display appropriate icon based on the title if it matches a status or priority */}
+          {statusIcons[title] || priorityIcons[title] || null}
+          {title}
+        </h2>
+
+        {/* Buttons for "Add" and "More Options" */}
+        <div className="column-buttons">
+          <button className="add-button">+</button>
+          <button className="more-button">...</button>
+        </div>
+      </div>
 
       <div className="ticket-list">
         {/* Render each ticket as a TicketCard component */}

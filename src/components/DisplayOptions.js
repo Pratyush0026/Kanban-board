@@ -7,7 +7,8 @@ function DisplayOptions({ setGrouping, setOrdering }) {
     <div className="display-options">
       {/* Grouping selection dropdown */}
       <label>
-        Grouping
+        
+        <h3>Grouping</h3>
         <select onChange={(e) => setGrouping(e.target.value)} defaultValue="status">
           <option value="status">Status</option>
           <option value="user">User</option>
@@ -17,7 +18,8 @@ function DisplayOptions({ setGrouping, setOrdering }) {
 
       {/* Ordering selection dropdown */}
       <label>
-        Ordering
+        
+        <h3>Ordering</h3>
         <select onChange={(e) => setOrdering(e.target.value)} defaultValue="priority">
           <option value="priority">Priority</option>
           <option value="title">Title</option>
