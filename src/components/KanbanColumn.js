@@ -8,7 +8,6 @@ import { BsDashCircle, BsCheckCircle } from 'react-icons/bs';
 import { RxCrossCircled } from 'react-icons/rx';
 import '../styles/KanbanColumn.css';
 
-// Default user profile images for column headers
 const defaultUserImages = [
   'https://randomuser.me/api/portraits/men/32.jpg',
   'https://randomuser.me/api/portraits/women/44.jpg',
