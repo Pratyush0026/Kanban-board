@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/DisplayOptions.css';
 
-// Component to allow users to select grouping and ordering options
+
 function DisplayOptions({ setGrouping, setOrdering }) {
   return (
     <div className="display-options">

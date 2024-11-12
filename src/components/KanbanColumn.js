@@ -1,4 +1,3 @@
-// src/components/KanbanColumn.js
 import React from 'react';
 import TicketCard from './TicketCard';
 import { FaExclamationCircle } from 'react-icons/fa';

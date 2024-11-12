@@ -1,4 +1,3 @@
-// src/components/KanbanBoard.js
 import React, { useState, useEffect } from 'react';
 import DisplayOptions from './DisplayOptions';
 import KanbanColumn from './KanbanColumn';

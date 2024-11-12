@@ -6,7 +6,6 @@ import { FiArrowDown } from 'react-icons/fi';
 import { BsDashCircle } from 'react-icons/bs';
 import '../styles/TicketCard.css';
 
-// Array of default profile images for users
 const defaultUserImages = [
   'https://randomuser.me/api/portraits/men/32.jpg',
   'https://randomuser.me/api/portraits/women/44.jpg',
@@ -15,7 +14,6 @@ const defaultUserImages = [
   'https://randomuser.me/api/portraits/men/85.jpg'
 ];
 
-// TicketCard component to display individual ticket information
 function TicketCard({ ticket }) {
   // Icons representing different ticket priority levels
   const priorityIcons = [
