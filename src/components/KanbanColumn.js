@@ -53,6 +53,10 @@ function KanbanColumn({ title, tickets, isUserColumn }) {
           {/* Display appropriate icon based on the title if it matches a status or priority */}
           {statusIcons[title] || priorityIcons[title] || null}
           {title}
+          {/* Display the number of tickets in this column */}
+          {isUserColumn && tickets.length > 0 && (
+            <span className="ticket-count">({tickets.length})</span>
+          )}
         </h2>
 
         {/* Buttons for "Add" and "More Options" */}
